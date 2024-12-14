@@ -11,7 +11,7 @@ class MyPortfolioApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '陳俊權的個人簡介',
-      home: const Scaffold(
+      home: Scaffold(
         appBar: AppBar(
           title: Text('🌟 陳俊權的個人簡介 🌟'),
           backgroundColor: Colors.blueAccent,
@@ -51,7 +51,7 @@ class PortfolioContent extends StatelessWidget {
           Divider(height: 32),
           SectionHeader(title: "📚 學習歷程"),
           Text(
-            "我的學習過程充滿好奇心，透過實際動手操作與專案挑戰，累積了豐富的經驗。我精通 Python、Java、React 和 OpenCV，"
+            "我的學習過程充滿好奇心，透過實際動手操作與專案挑戰，累積了豐富的經驗。我精通 Python、Java、C++、和 OpenCV，"
             "並藉由實際專案和開源貢獻不斷提升我的技術能力。我相信終身學習，並持續透過線上課程和閱讀技術部落格來增強自己。",
             style: TextStyle(fontSize: 16),
           ),
