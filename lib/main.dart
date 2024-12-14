@@ -1,100 +1,102 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyPortfolioApp());
+  runApp(const MyPortfolioApp());
 }
 
 class MyPortfolioApp extends StatelessWidget {
+  const MyPortfolioApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Darren\'s Portfolio',
-      home: Scaffold(
+      title: '陳俊權的個人簡介',
+      home: const Scaffold(
         appBar: AppBar(
-          title: Text('🌟 Darren\'s Portfolio 🌟'),
+          title: Text('🌟 陳俊權的個人簡介 🌟'),
           backgroundColor: Colors.blueAccent,
         ),
-        body: SingleChildScrollView(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Hi, I’m Darren 陳俊權 👋",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 8),
-              Text(
-                "A passionate software developer and lifelong learner striving to build impactful tech solutions. Welcome to my journey!",
-                style: TextStyle(fontSize: 16),
-              ),
-              Divider(height: 32),
-              SectionHeader(title: "📜 Autobiography"),
-              Text(
-                "I was born and raised in a multilingual household, speaking Bahasa Indonesia, English, Traditional Chinese (繁體中文), and Hokkien. "
-                    "From an early age, I was fascinated by technology and its power to transform lives. My educational journey began at NKUST (國立高雄科技大學), "
-                    "where I pursued a degree in Computer Science and cultivated a deep love for solving challenging problems through code.",
-                style: TextStyle(fontSize: 16),
-              ),
-              Divider(height: 32),
-              SectionHeader(title: "📚 Learning Process"),
-              Text(
-                "My learning process is driven by curiosity and hands-on experience. I enjoy exploring new technologies through projects and challenges. "
-                    "I have gained expertise in Python, Java, React, and OpenCV by building real-world applications and contributing to open-source projects. "
-                    "I believe in continuous learning and frequently enhance my skills through online courses, coding bootcamps, and reading technical blogs.",
-                style: TextStyle(fontSize: 16),
-              ),
-              Divider(height: 32),
-              SectionHeader(title: "🎓 Study Plan"),
-              Text(
-                "To stay ahead in this fast-paced tech world, I have outlined a study plan focusing on three core areas: "
-                    "\n\n1. **Advanced Web Development**: Mastering modern frameworks like Next.js and integrating scalable backend solutions. "
-                    "\n2. **Artificial Intelligence**: Deep diving into machine learning models and experimenting with real-world applications. "
-                    "\n3. **Mobile Development**: Strengthening my Flutter skills to build cross-platform apps with exceptional user experiences.",
-                style: TextStyle(fontSize: 16),
-              ),
-              Divider(height: 32),
-              SectionHeader(title: "🚀 Future Plan"),
-              Text(
-                "Looking ahead, I aspire to become a leader in the tech industry, creating innovative solutions that make a difference. "
-                    "My future goals include:\n\n"
-                    "- Building a startup that focuses on accessible education technologies.\n"
-                    "- Mentoring budding developers to give back to the community.\n"
-                    "- Exploring the intersection of technology and sustainability to contribute to a greener planet.",
-                style: TextStyle(fontSize: 16),
-              ),
-              Divider(height: 32),
-              SectionHeader(title: "📫 Let’s Connect!"),
-              ListTile(
-                leading: Icon(Icons.email),
-                title: Text("darrentaslim04@gmail.com"),
-              ),
-              ListTile(
-                leading: Icon(Icons.web),
-                title: Text("Portfolio: chien.dev"),
-                onTap: () {
-                  // Add action to open URL
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.link),
-                title: Text("LinkedIn: chiendarren"),
-                onTap: () {
-                  // Add action to open LinkedIn profile
-                },
-              ),
-              Divider(height: 32),
-              Text(
-                "✨ Thank You!",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-              Text(
-                "Feel free to explore my journey, and let’s build something amazing together!",
-                style: TextStyle(fontSize: 16),
-              ),
-            ],
+        body: PortfolioContent(),
+      ),
+    );
+  }
+}
+
+class PortfolioContent extends StatelessWidget {
+  const PortfolioContent({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Text(
+            "你好！我是陳俊權 👋",
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
-        ),
+          SizedBox(height: 8),
+          Text(
+            "一位充滿熱情的軟體開發者與終身學習者，致力於透過技術創造有影響力的解決方案。歡迎來到我的旅程！",
+            style: TextStyle(fontSize: 16),
+          ),
+          Divider(height: 32),
+          SectionHeader(title: "📜 自傳"),
+          Text(
+            "我來自一個多語言家庭，日常使用印尼語、英文、繁體中文和福建話進行交流。我從小對科技充滿好奇，並相信技術能改變人類生活。"
+            "在國立高雄科技大學 (NKUST) 就讀電腦科學學士期間，我培養了對編寫程式解決複雜問題的熱愛。",
+            style: TextStyle(fontSize: 16),
+          ),
+          Divider(height: 32),
+          SectionHeader(title: "📚 學習歷程"),
+          Text(
+            "我的學習過程充滿好奇心，透過實際動手操作與專案挑戰，累積了豐富的經驗。我精通 Python、Java、React 和 OpenCV，"
+            "並藉由實際專案和開源貢獻不斷提升我的技術能力。我相信終身學習，並持續透過線上課程和閱讀技術部落格來增強自己。",
+            style: TextStyle(fontSize: 16),
+          ),
+          Divider(height: 32),
+          SectionHeader(title: "🎓 學習計畫"),
+          Text(
+            "為了跟上科技的快速變遷，我訂定了一份學習計畫，著重於以下三個領域：\n\n"
+            "1. **進階網頁開發**：掌握 Next.js 框架並實現可擴展的後端解決方案。\n"
+            "2. **人工智慧**：深入機器學習模型並應用於真實案例。\n"
+            "3. **跨平台應用開發**：強化 Flutter 技能，打造出色的使用者體驗。",
+            style: TextStyle(fontSize: 16),
+          ),
+          Divider(height: 32),
+          SectionHeader(title: "🚀 未來規劃"),
+          Text(
+            "未來，我希望能在科技產業中成為一位領袖，透過創新技術解決真實問題。我的目標包括：\n\n"
+            "- 創建一家專注於教育技術的公司，讓學習變得更加容易。\n"
+            "- 培養年輕的開發者，回饋技術社群。\n"
+            "- 探索技術與永續發展的結合，為環境保護貢獻一份力量。",
+            style: TextStyle(fontSize: 16),
+          ),
+          Divider(height: 32),
+          SectionHeader(title: "📫 聯絡我"),
+          ListTile(
+            leading: Icon(Icons.email),
+            title: Text("📧 電子郵件：darrentaslim04@gmail.com"),
+          ),
+          ListTile(
+            leading: Icon(Icons.web),
+            title: Text("🌐 個人網站：chien.dev"),
+          ),
+          ListTile(
+            leading: Icon(Icons.link),
+            title: Text("💼 LinkedIn：chiendarren"),
+          ),
+          Divider(height: 32),
+          Text(
+            "✨ 感謝您的閱讀！",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            "歡迎瀏覽我的旅程，讓我們一起創造美好的未來！🚀",
+            style: TextStyle(fontSize: 16),
+          ),
+        ],
       ),
     );
   }
@@ -102,14 +104,14 @@ class MyPortfolioApp extends StatelessWidget {
 
 class SectionHeader extends StatelessWidget {
   final String title;
-  SectionHeader({required this.title});
+
+  const SectionHeader({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: TextStyle(
-          fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blueAccent),
+      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blueAccent),
     );
   }
 }
